@@ -1,39 +1,113 @@
+:root {
+  --primary-color: #0f172a;
+  --accent-color: #00f2fe;
+  --text-main: #2d3748;
+  --text-muted: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.82);
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle at top left, #a8ff78, #78ffd6);
-  color: #2d3748;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 10% 20%, #4facfe 0%, #00f2fe 90%);
+  color: var(--text-main);
   margin: 0;
-  padding: 0;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
+/* Card in stile Glassmorphism con bagliore */
 .card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
-  max-width: 450px;
+  border-radius: 28px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  max-width: 420px;
   width: 100%;
   box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 
+    0 35px 60px -15px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 1) inset;
 }
 
+/* Titolo principale */
 h1 {
-  color: #1a202c;
+  color: var(--primary-color);
   margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 2.2em;
+  margin-bottom: 8px;
+  font-size: 2.5em;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.05em;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+/* Sottotitolo */
+h2 {
+  color: var(--primary-color);
+  font-size: 1.3em;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+}
+
+/* Formattazione della lista trasformata in schede interattive */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+ul li:hover {
+  background: #ffffff;
+  transform: translateX(6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Styling dei link all'interno della lista */
+ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+ul li a:hover {
+  color: #0284c7;
 }
