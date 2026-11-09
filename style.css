@@ -18,8 +18,6 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
 }
-
-/* Card in stile Glassmorphism con bagliore */
 .card {
   position: relative;
   background: var(--card-bg);
@@ -35,15 +33,12 @@ body {
   box-sizing: border-box;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
-
 .card:hover {
   transform: translateY(-8px) scale(1.01);
   box-shadow: 
     0 35px 60px -15px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 1) inset;
 }
-
-/* Titolo principale */
 h1 {
   color: var(--primary-color);
   margin-top: 0;
@@ -52,7 +47,6 @@ h1 {
   font-weight: 800;
   letter-spacing: -1px;
 }
-
 p {
   color: var(--text-muted);
   font-size: 1.05em;
@@ -60,8 +54,6 @@ p {
   margin-top: 0;
   margin-bottom: 28px;
 }
-
-/* Sottotitolo */
 h2 {
   color: var(--primary-color);
   font-size: 1.3em;
@@ -71,8 +63,6 @@ h2 {
   display: flex;
   align-items: center;
 }
-
-/* Formattazione della lista trasformata in schede interattive */
 ul {
   list-style: none;
   padding: 0;
@@ -99,8 +89,6 @@ ul li:hover {
   transform: translateX(6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
-
-/* Styling dei link all'interno della lista */
 ul li a {
   color: var(--primary-color);
   text-decoration: none;
